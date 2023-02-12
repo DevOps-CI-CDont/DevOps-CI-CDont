@@ -63,7 +63,9 @@ type Message struct {
 	Author     User   `json:"author"`
 }
 
-var dbPath = "./../../tmp/minitwit.db"
+// TODO: path should be decided at run time (perhaps by an environment variable)
+// var dbPath = "../tmp/minitwit.db"
+var dbPath = "/user/src/app/tmp/minitwit.db"
 var DB *sql.DB // global DB variable
 var PER_PAGE = 30
 var DEBUG = true

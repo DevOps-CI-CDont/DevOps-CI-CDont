@@ -6,8 +6,11 @@ COPY go.mod go.sum ./
 RUN go mod download && go mod verify
 
 COPY . .
-RUN go build -v -o /usr/local/bin/minitwitbackend ./Api
+COPY ./tmp /usr/local/bin/tmp
+
+WORKDIR /user/src/app
+RUN go build -v -o /usr/local/bin/app ./Api
 
 EXPOSE 8080
 
-CMD ["minitwitbackend"]
+CMD ["app"]

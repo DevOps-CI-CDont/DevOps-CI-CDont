@@ -4,7 +4,9 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_CORS_ORIGIN: "http://localhost:6001",
     NEXT_PUBLIC_API_URL: "http://localhost:8080"
-  }
+  },
+  // from this guide https://github.com/vercel/next.js/tree/canary/examples/with-docker
+  output: 'standalone'
 }
 
 /* module.exports = {

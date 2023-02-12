@@ -7,7 +7,7 @@ export function CreateMessage() {
   return (
     <div className='w-full mt-2 bg-gray-300 shadow-md px-1 py-1 rounded-md'>
       <div className='mx-4 my-2'>
-        <span>What's on your mind?</span>
+        <span>What&quot;s on your mind?</span>
         <form className='flex flex-row mt-2' onSubmit={(e) => handleSubmit(e)}>
           <input
             type='text'

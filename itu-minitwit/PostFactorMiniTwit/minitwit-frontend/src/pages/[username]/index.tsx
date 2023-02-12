@@ -15,7 +15,7 @@ export default function UserProfilePage({
   return (
     <DefaultLayout>
       <div className='mt-4'>
-        <h1>{username}'s profile</h1>
+        <h1>{username}&quot;s profile</h1>
         <TweetContainer tweets={tweets} />
       </div>
     </DefaultLayout>

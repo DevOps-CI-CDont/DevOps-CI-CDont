@@ -1,0 +1,23 @@
+# remember to run "docker build -t cicdont/frontend ." and
+# "docker build -t cicdont/backend ." in root directories minitwit-front 
+# and minitwit-backend, respectively, before running this file with command
+# "docker-compose up"
+services:
+  frontend:
+    image: cicdont/frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - outside
+
+  backend:
+    image: cicdont/backend
+    ports:
+      - "8080:8080"
+    networks:
+      - outside
+
+networks:
+  outside:
+    external:
+      name: minitwit-network

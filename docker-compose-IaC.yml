@@ -108,7 +108,7 @@ services:
         source: ./nginx.conf
         target: /etc/nginx/nginx.conf
       - type: bind
-        source: ${ELK_DIR}/.htpasswd
+        source: ./.htpasswd
         target: /etc/nginx/.htpasswd
 
 volumes:

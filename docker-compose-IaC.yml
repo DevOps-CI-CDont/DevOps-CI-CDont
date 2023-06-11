@@ -92,11 +92,16 @@ services:
           
   nginx: 
     image: nginx
+    depends_on:
+      - kibana
+      - filebeat
+      - elasticsearch
+      - prometheus
+      - grafana
+      - frontend
+      - backend
     ports:
-      - 9200:9200
-      - 5601:5601
-      - 8881:8881
-      - 8882:8882
+      - 80:80
     networks:
       - elk
     volumes:

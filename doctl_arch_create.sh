@@ -85,8 +85,14 @@ doctl compute ssh manager1 --ssh-command "curl https://raw.githubusercontent.com
 doctl compute ssh manager1 --ssh-command "curl https://raw.githubusercontent.com/DevOps-CI-CDont/DevOps-CI-CDont/main/itu-minitwit/filebeat.yml --output /filebeat.yml"
 doctl compute ssh manager1 --ssh-command "curl https://raw.githubusercontent.com/DevOps-CI-CDont/DevOps-CI-CDont/main/itu-minitwit/.htpasswd --output /.htpasswd"
 doctl compute ssh manager1 --ssh-command "curl https://raw.githubusercontent.com/DevOps-CI-CDont/DevOps-CI-CDont/main/itu-minitwit/prometheus.yml --output /prometheus.yml"
+doctl compute ssh manager1 --ssh-command "mkdir grafana"
+doctl compute ssh manager1 --ssh-command "mkdir grafana/dashboards"
+doctl compute ssh manager1 --ssh-command "curl https://raw.githubusercontent.com/DevOps-CI-CDont/DevOps-CI-CDont/main/itu-minitwit/grafana/dashboards/main-dashboard.json --output ./grafana/dashboards/dashboard.yaml"
+doctl compute ssh manager1 --ssh-command "curl https://raw.githubusercontent.com/DevOps-CI-CDont/DevOps-CI-CDont/main/itu-minitwit/grafana/dashboard.yaml --output ./grafana/dashboard.yaml"
+doctl compute ssh manager1 --ssh-command "curl https://raw.githubusercontent.com/DevOps-CI-CDont/DevOps-CI-CDont/main/itu-minitwit/grafana/datasources.yaml --output ./grafana/datasources.yaml"
 
-echo "docker compose up on manager1"
+
+echo "installing docker on droplet"
 doctl compute ssh manager1 --ssh-command "sh get-docker.sh"
 # Function to check if the 'docker' command is recognized on the droplet
 check_docker_command() {

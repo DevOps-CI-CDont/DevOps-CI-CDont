@@ -18,7 +18,7 @@ export function Header() {
 			<nav className="flex justify-between items-center h-20 max-w-7xl mx-auto px-2">
 				<div>
 					<Link href={"/public"}>
-						<h2 className="font-bold text-lg">ITU Minitwit (now with CD)</h2>
+						<h2 className="font-bold text-lg">ITU Minitwit (now with CD)!</h2>
 					</Link>
 					{username && <span>Welcome: {username.toString()}</span>}
 				</div>

@@ -80,7 +80,7 @@ doctl compute ssh manager1 --ssh-command "sudo doctl registry login"
 
 # get docker compose file on manager 1
 echo "trying to get docker compose file on manager1"
-doctl compute ssh manager1 --ssh-command "curl https://raw.githubusercontent.com/DevOps-CI-CDont/DevOps-CI-CDont/main/docker-compose-IaC.yml --output ./docker-compose.yml "
+doctl compute ssh manager1 --ssh-command "curl https://raw.githubusercontent.com/DevOps-CI-CDont/DevOps-CI-CDont/main/docker-compose-IaC.yml --output ./docker-compose.yml"
 doctl compute ssh manager1 --ssh-command "curl https://raw.githubusercontent.com/DevOps-CI-CDont/DevOps-CI-CDont/main/itu-minitwit/nginx.conf --output ./nginx.conf"
 doctl compute ssh manager1 --ssh-command "curl https://raw.githubusercontent.com/DevOps-CI-CDont/DevOps-CI-CDont/main/itu-minitwit/filebeat.yml --output /filebeat.yml"
 doctl compute ssh manager1 --ssh-command "curl https://raw.githubusercontent.com/DevOps-CI-CDont/DevOps-CI-CDont/main/itu-minitwit/.htpasswd --output /.htpasswd"
